@@ -27,7 +27,7 @@ namespace Shipping_Quote
                 } else
                 {
                     float quote = ((width + height + length) * weight) / 100;
-                    Console.WriteLine(quote.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+                    Console.WriteLine("The cost of shipping your package is " + quote.ToString("C", CultureInfo.GetCultureInfo("en-US")));
                     Console.Read();
                 }
             }
