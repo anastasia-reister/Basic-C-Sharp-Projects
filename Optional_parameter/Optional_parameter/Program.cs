@@ -16,16 +16,27 @@ namespace Optional_parameter
             //3. Ask the user to input two numbers, one at a time. 
             //Let them know they need not enter anything for the second number. -- not sure 
             Console.WriteLine("Enter a number:");
-            int num1 = Convert.ToInt32(Console.ReadLine());
+            string stringNum1 = Console.ReadLine();
 
-            Console.WriteLine("Enter another number:");
-            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter another number or press enter");
+            string  stringNum2 = Console.ReadLine();
+            //Console.Read();
 
             //5. Try various combinations of numbers on the code, including having no second number.
-            Console.WriteLine("method with one parameter specified: " + someMath1.multiply(num1));
-
-            Console.WriteLine("method with both parameters specified: " + someMath1.multiply(num1,num2));
-
+            // This if statement evaluates if second inout was a number, if so converts it to int and calls method with 2 parameters
+            // if second inout is not a number - a letter or return key, call method with 1 param, second is default.
+            int num2;
+            if (!int.TryParse(stringNum2, out num2))  // second passed string is NOT an integer
+            {
+                int num1 = Convert.ToInt32(stringNum1);
+                Console.WriteLine("method with one parameter specified: " + someMath1.multiply(first: num1));
+            }
+            else
+            {
+                int num1 = Convert.ToInt32(stringNum1);
+                num2 = Convert.ToInt32(stringNum2);
+                Console.WriteLine("method with both parameters specified: " + someMath1.multiply(first: num1, second: num2));
+            }
             Console.Read();
 
         }

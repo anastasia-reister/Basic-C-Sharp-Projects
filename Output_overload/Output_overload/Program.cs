@@ -21,18 +21,17 @@ namespace Output_overload
             math1.divideByTwo(word, out string half1, out string half2);
             Console.WriteLine("Succes! You made two new words: " + half1 + " and " + half2 + ". Use them wisely. \n");
 
-
-            Console.WriteLine("Harris-Benedict Formula of Basal Metabolic Rate.\n");
+            Console.WriteLine("And now Harris-Benedict Formula of Basal Metabolic Rate.\n");
             Console.WriteLine("Please enter \"m\" for male or \"f\" for female");
             string gender = Console.ReadLine();
 
-            Console.WriteLine("Please enter weight in pounds:");
+            Console.WriteLine("Please enter your weight in pounds:");
             double weight = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Please enter height in inches:");
+            Console.WriteLine("Please enter your height in inches:");
             double height = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Please enter age in years");
+            Console.WriteLine("Please enter your age in years");
             int age = Convert.ToInt16(Console.ReadLine());
 
             Console.WriteLine("Please evaluate your activity level from 1 to 5, 1 being Sedentary and 5 being Extra active");
