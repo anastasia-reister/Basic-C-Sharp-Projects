@@ -10,6 +10,12 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
+            TwentyOneGame game = new TwentyOneGame();
+            game.Players = new List<string> { "Jesse", "Bill", "Joe" };
+            game.ListPlayers();
+
+            Console.Read();
+
             Deck deck = new Deck(); //instantiate deck
             deck.Shuffle();
 
