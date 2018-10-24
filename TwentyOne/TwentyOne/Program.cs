@@ -16,15 +16,15 @@ namespace TwentyOne
 
             Console.Read();
 
-            Deck deck = new Deck(); //instantiate deck
-            deck.Shuffle();
+            //Deck deck = new Deck(); //instantiate deck
+            //deck.Shuffle();
 
-            foreach (Card card in deck.Cards)
-            {
-                Console.WriteLine(card.Face + " of " + card.Suit);
-            }
-            Console.WriteLine(deck.Cards.Count);
-            Console.Read();
+            //foreach (Card card in deck.Cards)
+            //{
+            //    Console.WriteLine(card.Face + " of " + card.Suit);
+            //}
+            //Console.WriteLine(deck.Cards.Count);
+            //Console.Read();
         }
 
        
