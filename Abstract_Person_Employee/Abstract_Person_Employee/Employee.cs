@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Abstract_Person_Employee
 {
-    class Employee : Person, IQuittable
+    public class Employee<T> : Person, IQuittable
     {
+        public  Employee()
+        {
+            Things = new List<T>();
+        }
+        public List<T> Things { get; set; }
         public int Id { get; set; }
         public override void SayName()
         {
@@ -19,7 +24,7 @@ namespace Abstract_Person_Employee
             Console.WriteLine("I Quit!");
         }
 
-        public static bool operator==(Employee emp1, Employee emp2)
+        public static bool operator==(Employee<T> emp1, Employee<T> emp2)
         {
             bool isEqual = false;
             if(emp1.Id == emp2.Id)
@@ -29,7 +34,7 @@ namespace Abstract_Person_Employee
             return isEqual;
         }
 
-        public static bool operator!=(Employee emp1, Employee emp2)
+        public static bool operator!=(Employee<T> emp1, Employee<T> emp2)
         {
             bool isNotEqual = false;
             if (emp1.Id != emp2.Id)
