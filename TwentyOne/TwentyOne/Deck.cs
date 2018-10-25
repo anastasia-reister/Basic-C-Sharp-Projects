@@ -12,20 +12,15 @@ namespace TwentyOne
         public Deck()//construction name always same as name of class
         {
             Cards = new List<Card>(); //instantiating property Cards as an empty list
-            List<string> Suits = new List<string>() { "Spades", "Clubs", "Hearts", "Diamonds" };
-            List<string> Faces = new List<string>()
+            
+            for (int i = 0; i < 13; i++) //each enum value has an integer index starting at 0 unless specified otherwise
+                                         //we're looping through 13 values of Face and 4 values of Suit
             {
-                "Two", "Three", "Four", "Five", "Six", "Seven",
-                "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"
-            };
-
-            foreach (string face in Faces)
-            {
-                foreach(string suit in Suits)
+                for (int j = 0; j < 4; j++)
                 {
-                    Card card = new Card();
-                    card.Suit = suit;
-                    card.Face = face;
+                    Card card = new Card(); 
+                    card.Face = (Face)i; //each integer is later casted into the enum Type: in this case Face
+                    card.Suit = (Suit)j; //j=0 => Face value at 0 is Two => card.Face is assigned Two etc.
                     Cards.Add(card);
                 }
             }

@@ -26,7 +26,6 @@ namespace TwentyOne
 
 
 
-            Player player = new Player();
             Deck deck = new Deck(); //instantiate deck
             deck.Shuffle();
 

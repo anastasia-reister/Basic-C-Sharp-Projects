@@ -10,12 +10,37 @@ namespace TwentyOne
     {
         public Card() //Constructor: default values assigned to properties and or/methods run upon instantiation of a class
         {
-            Suit = "Spades";
-            Face = "Two";
+            
         }
-        public string Suit { get; set; }
-        public string Face { get; set; }
+        public Suit Suit { get; set; }// now that we have enum for suit the type of this property is Suit 
+        //and will not accept any other values than the 4 specified in enum Suit
+
+        public Face Face { get; set; }
     }
 
-    
+    public enum Suit //user defined datatype with a defined set of integral values
+    {
+        Clubs,
+        Diamonds,
+        Spades,
+        Hearts
+    }
+
+    public enum Face
+    {
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
+        Jack,
+        Queen,
+        King,
+        Ace
+        
+    }
 }
