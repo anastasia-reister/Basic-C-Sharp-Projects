@@ -12,12 +12,12 @@ namespace Target_Sum
         {
 
             int[] nums = new int[4] { 3, 8, 11, 6 };
-            int target = 100;
+            int target = 14;
 
             int[] result = new int[2];
-            result = Solution.TwoSum(nums,  target);
+            result = Solution.TwoSum(nums, target);
 
-         
+
             Console.Read();
         }
     }
