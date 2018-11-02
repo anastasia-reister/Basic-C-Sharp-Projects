@@ -10,7 +10,7 @@ namespace Palindrome_Number
     {
         static void Main(string[] args)
         {
-            int x = 123421;
+            int x = -1234321;
             bool isPalindrome = Solution.IsPalindrome(x);
             Console.WriteLine(isPalindrome);
             Console.Read();

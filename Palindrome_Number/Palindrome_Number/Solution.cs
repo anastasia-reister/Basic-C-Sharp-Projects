@@ -10,25 +10,39 @@ namespace Palindrome_Number
     {
         public static bool IsPalindrome(int x)
         {
-            Stack<string> myStack = new Stack<string>();
-            string xString = x.ToString();
-            for ( int i = 0; i<xString.Length; i++)
+
+            Int64 initNum = x;
+            Stack<Int64> newStack = new Stack<Int64>();
+            do
             {
-                myStack.Push(xString[i].ToString());
+                newStack.Push(x % 10);
+                x /= 10;
+            } while (x > 0);
+
+            int count = newStack.Count();
+            Stack<Int64> revertedStack = new Stack<Int64>();
+            for (int k = 0; k < count; k++)
+            {
+                revertedStack.Push(newStack.Pop());
             }
 
-            StringBuilder reverse = new StringBuilder();
-            do { reverse.Append(myStack.Pop()); }
-            while (myStack.Count > 0); 
-           
+            Int64 num = 0;
+            for (int i = revertedStack.Count; i > 0; i--)
+            {
 
-            if(xString == reverse.ToString())
+                num += (revertedStack.Pop() * Convert.ToInt64(Math.Pow(10, i))) / 10;
+            }
+
+
+
+            if (initNum == num && initNum >= 0)
             {
                 return true;
             }
             else
             {
                 return false;
+
             }
         }
     }
