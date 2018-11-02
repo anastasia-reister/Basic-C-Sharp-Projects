@@ -44,21 +44,7 @@ namespace Roman_to_Integer
                     result += Convert.ToInt32(romans[romanNumList[i]]);
                 }
             }
-            //foreach(LinkedListNode<String> romNum in romanNumList)
-            //{
-            //    if (romNum == romanNumList.First())
-            //    {
-            //        result += Convert.ToInt32(romans[romNum.Value]);
-            //    } 
-            //    else if (Convert.ToInt32(romans[romNum.Previous]) < Convert.ToInt32(romans[romNum.Value]))
-            //    {
-            //        result -= 2 * Convert.ToInt32(romans[romNum.Previous.Value]) + Convert.ToInt32(romans[romNum.Value]);
-            //    }
-            //    else
-            //    {
-            //        result += Convert.ToInt32(romans[romNum]);
-            //    }
-            //}
+          
 
             return result;
         }
