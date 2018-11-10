@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using NewsletterAppMvc.Models;
+using NewsletterAppMvc.ViewModels;
 
 namespace NewsletterAppMvc.Controllers
 {
@@ -69,10 +70,20 @@ namespace NewsletterAppMvc.Controllers
                     signup.FirstName = reader["FirstName"].ToString();
                     signup.LastName = reader["LastName"].ToString();
                     signup.EmailAddress = reader["EmailAddress"].ToString();
+                    signup.SocialSecurityNumber = reader["SocialsecurityNumber"].ToString();
                     signups.Add(signup);
                 }
             }
-            return View(signups);
+            var signupsVM = new List<SignupVM>();
+            foreach(var signup in signups)
+            {
+                var signupVm = new SignupVM();
+                signupVm.FirstName = signup.FirstName;
+                signupVm.LastName = signup.LastName;
+                signupVm.EmailAddress = signup.EmailAddress;
+                signupsVM.Add(signupVm);
+            }
+            return View(signupsVM);
         }
     }
 }
